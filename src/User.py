@@ -31,11 +31,12 @@ class User:
     friends: list[Friend]
     greeting: str
     favoriteFruit: str
-    books = []
+    books: list[Book]
 
     def __init__(self, **kwargs):
         for k, v in kwargs.items():
             self.__setattr__(k, v)
+        self.books = []
 
     def to_json(self):
         books = []
